@@ -1,0 +1,594 @@
+<html>
+  <script type="text/javascript">
+    window["_gaUserPrefs"] = {
+      ioo: function () {
+        return true;
+      },
+    };
+  </script>
+  <head>
+    <title>Leaves Status</title>
+    <link rel="shortcut icon" href="Images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css" />
+    <link type="text/css" href="css/reset.css" rel="stylesheet" />
+    <link type="text/css" href="css/module.css" rel="stylesheet" />
+    <link type="text/css" href="css/main.css" rel="stylesheet" />
+    <link type="text/css" href="css/jquery.autocomplete.css" rel="stylesheet" />
+    <script type="text/javascript" src="Scripts/jquery-1.4.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.colorbox.js"></script>
+    <script type="text/javascript" src="Scripts/main.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="Scripts/datetimepicker.js"></script>
+    <script type="text/javascript" src="Scripts/Disable_rightclick.js"></script>
+    <script type="text/javascript" src="Scripts/Footer.js"></script>
+    <script type="text/javascript" src="Scripts/Disable_BackButton.js"></script>
+    <script
+      type="text/javascript"
+      src="Scripts/jquery.autocomplete.js"
+    ></script>
+    <link
+      type="text/css"
+      href="Datepicker/datepicker_style.css"
+      rel="stylesheet"
+    />
+    <script
+      type="text/javascript"
+      src="Datepicker/jquery-1.7.2.min.js"
+    ></script>
+    <script type="text/javascript" src="Datepicker/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+      var window_style =
+        "width=900,height=1000,toolbar=0,menubar=0,location=0,status=yes,scrollbars=yes,resizable=yes,left=50,top=50";
+      function Popup_window(window_url) {
+        window.open(window_url, "", window_style);
+      }
+    </script>
+  </head>
+  <body class="vsc-initialized">
+    <div class="note"></div>
+    <div id="cboxOverlay" style="display: none"></div>
+    <div
+      id="colorbox"
+      class=""
+      style="padding-bottom: 0px; padding-right: 0px; display: none"
+    >
+      <div id="cboxWrapper">
+        <div>
+          <div id="cboxTopLeft" style="float: left"></div>
+          <div id="cboxTopCenter" style="float: left"></div>
+          <div id="cboxTopRight" style="float: left"></div>
+        </div>
+        <div style="clear: left">
+          <div id="cboxMiddleLeft" style="float: left"></div>
+          <div id="cboxContent" style="float: left">
+            <div
+              id="cboxLoadedContent"
+              class=" "
+              style="width: 0px; height: 0px; overflow: hidden"
+            ></div>
+            <div id="cboxLoadingOverlay" class=" "></div>
+            <div id="cboxLoadingGraphic" class=" "></div>
+            <div id="cboxTitle" class=" "></div>
+            <div id="cboxCurrent" class=" "></div>
+            <div id="cboxNext" class=" "></div>
+            <div id="cboxPrevious" class=" "></div>
+            <div id="cboxSlideshow" class=" "></div>
+            <div id="cboxClose" class=" "></div>
+          </div>
+          <div id="cboxMiddleRight" style="float: left"></div>
+        </div>
+        <div style="clear: left">
+          <div id="cboxBottomLeft" style="float: left"></div>
+          <div id="cboxBottomCenter" style="float: left"></div>
+          <div id="cboxBottomRight" style="float: left"></div>
+        </div>
+      </div>
+      <div
+        style="
+          position: absolute;
+          width: 9999px;
+          visibility: hidden;
+          display: none;
+        "
+      ></div>
+    </div>
+    <form
+      name="aspnetForm"
+      method="post"
+      action="./View_Application_Status_Step1.aspx"
+      id="aspnetForm"
+      autocomplete="off"
+    >
+      <div>
+        <input
+          type="hidden"
+          name="__VIEWSTATE"
+          id="__VIEWSTATE"
+          value="qzZHAV5oZ3tnK0My2mCBUM9cGnUs7dIV/gqYrZcd9j4pcexa8vGKzNIAu/ZSadFt7Xv5pfIHBRUvRT6QtKIV6n1Wp8TF5FjPWRwnhPAgZqbIfOg1NT4FKFvWmseEWT7qKaE59S9Wb8IavPvK5r/DmVaLLLw0sIRoZFEnXhkVoE58AWHCS/5Em61Nvx02EoDNnVSIN09Q+ZIYHtZLAeANRQzMgZ0YhzAIyKb+O1r/5tjlTl88CB0OdbLwlAIOHiW1peWs7sWUWQp7S8Zo9JmJnzFXEQxcjsGfRka2lCSFyZd7LvikshzgwWPEa+8ItsOXdpQHe/qcGKXY46UDnB4XD5fjnCF0eNc2UtSs5ohaY17NIIlQHcTQIr/766ZnclDEOapNG6OM94gsoR7vEhBuMafGul68bib5NuldSzSxzPh0c6KRV5pfPt3deC6gnelbd33m2Tb9uPVdwlKIM0oPC7LTKwYoE9+Fpw+VuN8tmfKKPzrv5b0WYdyk7baXQl3YNIDkek0dX8KwfOXvBTmfNE3S2oNp7c7KtBEqrYmx8uMMlsk3w+bNhS7zs3zyLSZ3gHFOCzXf8ya5mjKkPuQLKhh+xGxQiTEPMuqDvCwIwitIYeu+jgOYMNCIKHwAljdlLKBzmES9qSUMdOEudGUA0rd6hwNlwyKoFq5hmx8tl1dChzMLpjqKVsEMUfvYyqYCWagGkhAT1ji9Uw3DNjbC/U909+nNRhVHFfnx9zegTRx/QYAkVmf2RkjOSIO0E8mWGyPmtjEYjU1byjbvOS9cLsGTmDUTAztWg7h2W09fR9C1iBg2R32XQNUHoXOOJ8zbLSy+5Ysx71VZ5z1owSJ9vlCKj+/pZP7D5n6kewNfAAH9TRSJInbm2WrJBzApmtb2MlWwHSAVEvDaOjFt2nVFBkcaEy3FTwC5Hyl5fj3m9ZKi86Y3CONyUV4jmzRWegX3F6e3LGohc8eqM1MqEfW17OSmtGtbnhgCqt4CvLjZj9Sd4LYhmOyEfkVmRaUoDuE1Rc+eLVUnIytNJDwWqKIuTCP3eKrRK8vmHNftlcahDmCqpqObo8yUdvuAHm9b0uz8KF7MMKagMfLhxizg2at6Yx0zx72Ek2cUQfSqDlXtJ1gbjM0v889x9iAPZaNctwZw5SyrZSpqQAgWFWT8XBQVkjIlo+sz4jaW0PCSt03sP02dpehXvq/gs9uiDD/o3W7cSp+IA7WL+mJausrBq1sNInWwJ7tF0DdN4OBDHIjCjHQRf0MHrfdeooTCxex1HxkOi3+Ea3fuxf0gHqlZ9WWkXjb3sSboMSCJYNLSYBcimTuZ+QfWNW3pK7oSh1SheqysWYVz08aHlAAT/TGIt/ER+TG5AFu/ppDwm3JLb1sQsG53X3ch/yi0iTnqPD1ttOy9wevf6v541+/n0ZJiB/BYqw/jfq+Ub9T+OwwjKtys5vbmkh5XB9+swxwf/+JdAR/tr0yccT2yxbwZt/ccxCAJBgJ56cyvMBTM4NtOGErK7fXVKhCHVXTisQ88DDXR0+s9MD3wgffNYU8DLXSJrFPSsm8pTIL2ULM94hAWEWlZ6S7N6N+v2cBIjOkd8zemmsRFuKCRzGa7MaEa/rvazAUgqtA/GXQZsVhAOtgyj2e9iWNIIC+Ds/wDxR9C3WGKyNX2RfktR92WE+JIhE/eGvjLsNVSyiFpXlceKBCJb1d1dcChjcYtKHcxMZfJJlkWQyJzzDRe9ZvJu1ceFg/C9CMKlxmk5jR8deAlpkokF2qIkY/BuCu1kTCBZZ7qhFAFt3rRmv2HQ+6zFbX2A5hOOKY3XRPeuqxADVPegANJ/b+k2uA4dM1s2NS26DbFfPXi3VyZfrBRNhtl9ksaURbzDkdlD54A7jN6joQSlFzyXSZxLO9ewnueSf0PQiP+pZARBeD8"
+        />
+      </div>
+
+      <script type="text/javascript">
+        //<![CDATA[
+        var theForm = document.forms["aspnetForm"];
+        if (!theForm) {
+          theForm = document.aspnetForm;
+        }
+        function __doPostBack(eventTarget, eventArgument) {
+          if (!theForm.onsubmit || theForm.onsubmit() != false) {
+            theForm.__EVENTTARGET.value = eventTarget;
+            theForm.__EVENTARGUMENT.value = eventArgument;
+            theForm.submit();
+          }
+        }
+        //]]>
+      </script>
+
+      <script
+        src="/SWD/WebResource.axd?d=76JYGT-fFf8r0iYRMo7z7NJNy1hohAMfBiRwiELlpoMWUho1Ml7EbaP0yW02Ho_a8s6hcAA_CP0JA62_vmb4ED_MIUHswiEmr3LBzRHit7k1&amp;t=637806966815382119"
+        type="text/javascript"
+      ></script>
+
+      <div>
+        <input
+          type="hidden"
+          name="__VIEWSTATEGENERATOR"
+          id="__VIEWSTATEGENERATOR"
+          value="1A07E830"
+        />
+        <input
+          type="hidden"
+          name="__SCROLLPOSITIONX"
+          id="__SCROLLPOSITIONX"
+          value="0"
+        />
+        <input
+          type="hidden"
+          name="__SCROLLPOSITIONY"
+          id="__SCROLLPOSITIONY"
+          value="0"
+        />
+        <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+        <input
+          type="hidden"
+          name="__EVENTARGUMENT"
+          id="__EVENTARGUMENT"
+          value=""
+        />
+        <input
+          type="hidden"
+          name="__VIEWSTATEENCRYPTED"
+          id="__VIEWSTATEENCRYPTED"
+          value=""
+        />
+      </div>
+      <div id="main" align="center">
+        <table
+          id="t1"
+          border="0"
+          cellpadding="0"
+          cellspacing="0"
+          width="100% "
+          bgcolor="White"
+        >
+          <tbody>
+            <tr>
+              <td>
+                <div id="Div1" align="left">
+                  <div class="headerWrapper">
+                    <div class="headerWrapperFix">
+                      <h1 class="hidden"><span> </span> BITS Pilani</h1>
+                      <div class="logoWrapper">
+                        <a href="#" class="logo" target="_blank">
+                          <img
+                            src="https://academic.bits-pilani.ac.in/SWD/Student/Images/BITS_Pilani_campus_logo.gif"
+                            alt="BITS Logo"
+                          />
+                        </a>
+                      </div>
+
+                      <ul class="mainNav">
+                        <li>
+                          <a href="Instructions.aspx">Apply For Leaves</a>
+                        </li>
+                        <li>
+                          <a
+                            href="Downloads/Parent's_Consent_Form.pdf"
+                            target="_blank"
+                            >Download Parent's Consent Form</a
+                          >
+                        </li>
+                        <li>
+                          <a href="View_Application_Status_Step1.aspx"
+                            >Leaves Status</a
+                          >
+                        </li>
+                      </ul>
+
+                      <ul
+                        class="siteInfo"
+                        style="
+                          right: 110px;
+                          width: 380px;
+                          top: 8px;
+                          height: 50px;
+                        "
+                      >
+                        <li style="width: 500px; margin-top: -1rem; margin-left: -2rem;">
+                          <p class="siteLog" style="text-align: center">
+                            <br />
+                            <span style="font-size: 0.6em"
+                              >Student Welfare Division (SWD)
+                            </span>
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="body_txt_in" style="height: 30px">
+                <table id="UserInfo" style="width: 100%">
+                  <tbody>
+                    <tr>
+                      <td width="60%" align="left" style="margin-left: 45px">
+                        <div style="font-size: 0.75rem;">
+                          <span style="color: #211d70"
+                            ><strong
+                              ><span style="color: #211d70"
+                                >&nbsp;&nbsp;&nbsp;&nbsp;W</span
+                              >elcome</strong
+                            >,</span
+                          >
+                          <span
+                            id="ctl00_Name"
+                            style="
+                              display: inline-block;
+                              color: #211d70;
+                              font-weight: bold;
+                              width: 469px;
+                              font-size: 0.8rem;
+                            "
+                            >SHWETABH NIKET</span
+                          >
+                        </div>
+                      </td>
+                      <td width="40%">
+                        <table id="table_logout_details" width="100%">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <div
+                                  id="div_logout"
+                                  align="right"
+                                  style="margin-right: 20px"
+                                >
+                                  <span
+                                    id="ctl00_lbl_current_date"
+                                    style="color: #211d70; font-weight: bold; font-size: 0.75rem"
+                                    >Saturday, September 16, 2023</span
+                                  >&nbsp;
+                                  <span
+                                    id="ctl00_lbl_spacer"
+                                    style="color: #211d70; font-weight: bold"
+                                    >|</span
+                                  >&nbsp;
+
+                                  <a class="footer" href="Logout.aspx"
+                                    ><strong
+                                      ><span style="font-size: 8pt"
+                                        >[Logout]</span
+                                      ></strong
+                                    ></a
+                                  >
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table
+                  align="center"
+                  border="0"
+                  cellpadding="0"
+                  cellspacing="0"
+                  width="100%"
+                  style="height: 300px"
+                >
+                  <tbody>
+                    <tr style="font-size: small;">
+                      <td
+                        id="contentpane"
+                        style="width: 100%; vertical-align: top"
+                      >
+                        <div align="center">
+                          <table
+                            border="0"
+                            cellpadding="0"
+                            align="center"
+                            cellspacing="0"
+                            style="width: 788px"
+                          >
+                            <tbody>
+                              <tr>
+                                <td style="height: 10px"></td>
+                              </tr>
+                              <tr valign="top">
+                                <td
+                                  class="head_already"
+                                  width="100%"
+                                  style="height: 20px; margin-right: 150px"
+                                >
+                                  <div align="center">Leaves Status</div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="height: 10px"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <div
+                            id="ctl00_ContentPlaceHolder1_main_div"
+                            align="center"
+                          >
+                            <table
+                              border="0"
+                              class="body_txt_in"
+                              align="center"
+                              cellspacing="0"
+                              style="width: 98%; height: 100%"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td style="height: 10px"></td>
+                                </tr>
+
+                                <tr>
+                                  <td
+                                    style="height: 30px; text-align: center;"
+                                    colspan="3"
+                                  >
+                                    <div align="center">
+                                      <div>
+                                        <table
+                                          cellspacing="0"
+                                          rules="all"
+                                          border="1"
+                                          id="ctl00_ContentPlaceHolder1_DG1"
+                                          style="
+                                            border-color: #cccccc;
+                                            border-width: 1px;
+                                            border-style: Solid;
+                                            width: 98%;
+                                            border-collapse: collapse;
+                                          "
+                                        >
+                                          <tbody>
+                                            <tr
+                                              align="left"
+                                              valign="middle"
+                                              style="
+                                                color: Black;
+                                                background-color: #f4f4f4;
+                                                border-color: #cccccc;
+                                                border-width: 1px;
+                                                font-size: 0.8rem;
+                                                border-style: solid;
+                                                font-weight: bold;
+                                              "
+                                            >
+                                              <th
+                                                scope="col"
+                                                style="width: 50px"
+                                              >
+                                                Sr No.
+                                              </th>
+                                              <th scope="col">IDNO</th>
+                                              <th scope="col">Name</th>
+                                              <th scope="col">Hostel</th>
+                                              <th scope="col">Room No.</th>
+                                              <th scope="col">
+                                                Departure Date
+                                              </th>
+                                              <th scope="col">Return Date</th>
+                                              <th scope="col">Leave Reason</th>
+                                              <th scope="col">
+                                                Application Status
+                                              </th>
+                                              <th scope="col">
+                                                Leaves Applied On
+                                              </th>
+                                              <th
+                                                scope="col"
+                                                style="width: 90px"
+                                              >
+                                                Action
+                                              </th>
+                                              <th
+                                                scope="col"
+                                                style="width: 160px"
+                                              >
+                                                Download Leave Approval
+                                              </th>
+                                            </tr>
+                                            <tr align="left" valign="middle" style="font-size: 0.8rem;">
+                                              <td
+                                                align="left"
+                                                valign="top"
+                                                style="border-color: Black"
+                                              >
+                                                1
+                                              </td>
+                                              <td style="border-color: Black">
+                                                2021B5A70923P
+                                              </td>
+                                              <td style="border-color: Black">
+                                                SHWETABH NIKET
+                                              </td>
+                                              <td style="border-color: Black">
+                                                Shankar Bhawan
+                                              </td>
+                                              <td style="border-color: Black">
+                                                3131
+                                              </td>
+                                              <td style="border-color: Black">
+                                                16-Sep-2023
+                                              </td>
+                                              <td style="border-color: Black">
+                                                17-Sep-2023
+                                              </td>
+                                              <td style="border-color: Black">
+                                                department outing.
+                                              </td>
+                                              <td
+                                                style="
+                                                  color: DarkGreen;
+                                                  border-color: Black;
+                                                  font-weight: bold;
+                                                "
+                                              >
+                                                Approved
+                                              </td>
+                                              <td style="border-color: Black">
+                                                16-Sep-2023
+                                              </td>
+                                              <td style="border-color: Black">
+                                                <a
+                                                  href="View_Application_Status_Processing.aspx?TXNID=26666d47-1a22-4320-82aa-213e0b95af7c"
+                                                  ><b>View Details</b></a
+                                                >
+                                              </td>
+                                              <td style="border-color: Black">
+                                                <div
+                                                  id="ctl00_ContentPlaceHolder1_DG1_ctl03_Div_Leave_Approval_Slip"
+                                                >
+                                                  <a
+                                                    href="./2021B5A70923P.pdf"
+                                                    target="_blank"
+                                                    ><b
+                                                      >Download Leave
+                                                      Approval</b
+                                                    ></a
+                                                  >
+                                                </div>
+                                              </td>
+                                            </tr>
+                                            <tr
+                                              align="left"
+                                              valign="middle"
+                                              style="background-color: White; font-size: 0.8rem;"
+                                            >
+                                              <td
+                                                align="left"
+                                                valign="top"
+                                                style="border-color: Black"
+                                              >
+                                                2
+                                              </td>
+                                              <td style="border-color: Black">
+                                                2021B5A70923P
+                                              </td>
+                                              <td style="border-color: Black">
+                                                SHWETABH NIKET
+                                              </td>
+                                              <td style="border-color: Black">
+                                                Shankar Bhawan
+                                              </td>
+                                              <td style="border-color: Black">
+                                                3131
+                                              </td>
+                                              <td style="border-color: Black">
+                                                06-Sep-2023
+                                              </td>
+                                              <td style="border-color: Black">
+                                                07-Sep-2023
+                                              </td>
+                                              <td style="border-color: Black">
+                                                need to attend a family function
+                                                in Delhi tonight.
+                                              </td>
+                                              <td
+                                                style="
+                                                  color: DarkGreen;
+                                                  border-color: Black;
+                                                  font-weight: bold;
+                                                "
+                                              >
+                                                Approved
+                                              </td>
+                                              <td style="border-color: Black">
+                                                06-Sep-2023
+                                              </td>
+                                              <td style="border-color: Black">
+                                                <a
+                                                  href="View_Application_Status_Processing.aspx?TXNID=fea4392b-bca0-4969-b6e4-afaccb7273fd"
+                                                  ><b>View Details</b></a
+                                                >
+                                              </td>
+                                              <td style="border-color: Black">
+                                                <div
+                                                  id="ctl00_ContentPlaceHolder1_DG1_ctl03_Div_Leave_Approval_Slip"
+                                                >
+                                                  <a
+                                                    href="./2021B5A70923P.pdf"
+                                                    target="_blank"
+                                                    ><b
+                                                      >Download Leave
+                                                      Approval</b
+                                                    ></a
+                                                  >
+                                                </div>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td style="height: 30px" colspan="2"></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <br />
+                          <br /><br />
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <script type="text/javascript">
+        //<![CDATA[
+
+        theForm.oldSubmit = theForm.submit;
+        theForm.submit = WebForm_SaveScrollPositionSubmit;
+
+        theForm.oldOnSubmit = theForm.onsubmit;
+        theForm.onsubmit = WebForm_SaveScrollPositionOnSubmit;
+        //]]>
+      </script>
+    </form>
+  </body>
+</html>
